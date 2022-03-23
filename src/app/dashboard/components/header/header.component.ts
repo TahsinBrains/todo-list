@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { TodosService } from '../../services/todos.service';
 
 @Component({
@@ -8,18 +9,18 @@ import { TodosService } from '../../services/todos.service';
 })
 export class HeaderComponent implements OnInit {
 
-  text: string = '';
+  text = new FormControl('', Validators.minLength(5));
 
   constructor(private todoService: TodosService) {}
 
-  changeText(event: Event): void {
-    const target = event.target as HTMLInputElement;
-    this.text = target.value;
-  }
+  // changeText(event: Event): void {
+  //   const target = event.target as HTMLInputElement;
+  //   this.text = target.value;
+  // }
 
   addTodo(): void {
-    this.todoService.addTodo(this.text);
-    this.text = '';
+    this.todoService.addTodo(this.text.value);
+    this.text.reset();
   }
 
   ngOnInit(): void {

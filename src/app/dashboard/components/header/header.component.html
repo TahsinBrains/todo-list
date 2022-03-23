@@ -4,8 +4,10 @@
     class="new-todo"
     placeholder="What needs to be done?"
     autoFocus
-    [value]="text"
-    (keyup)="changeText($event)"
+    [formControl]="text"
     (keyup.enter)="addTodo()"
   />
+  <span class="todo-error" *ngIf="text.invalid">
+    Todo must be greater than 4 characters
+  </span>
 </header>

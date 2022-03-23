@@ -6,6 +6,7 @@ import { MainComponent } from './components/main/main.component';
 import { SingleTodoComponent } from './components/single-todo/single-todo.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -20,11 +21,12 @@ const routes: Routes = [
     MainComponent,
     SingleTodoComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }

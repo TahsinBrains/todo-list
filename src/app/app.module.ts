@@ -7,6 +7,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { DetailsModule } from './details/details.module';
 import { LoginModule } from './login/login.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     DashboardModule,
     DetailsModule,
     NoopAnimationsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

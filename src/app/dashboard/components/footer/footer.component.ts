@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { map, mapTo, Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { TodosService } from '../../services/todos.service';
+import { FilterEnum } from '../../types/filter.enum';
 
 @Component({
   selector: 'app-footer',
@@ -11,6 +12,8 @@ export class FooterComponent implements OnInit {
   activeCount$: Observable<number>;
   noTodoClass$: Observable<boolean>;
   itemsLeftText$: Observable<string>;
+  filter$: Observable<FilterEnum>;
+  filterEnum = FilterEnum;
 
   constructor(private todosService: TodosService) {
     // chk number of active tasks
@@ -30,9 +33,18 @@ export class FooterComponent implements OnInit {
         return `item${pluralString} left`;
       })
     )
+
+    // grab filter obs. from service
+    this.filter$ = this.todosService.filter$;
    }
 
   ngOnInit(): void {
+  }
+
+  changeFilter(event: Event, filter: FilterEnum): void {
+    event.preventDefault();
+    console.log('filter', filter);
+    this.todosService.changeFilter(filter);
   }
 
 }

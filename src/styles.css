@@ -25,12 +25,18 @@ body {
 	line-height: 1.4em;
 	background: #f5f5f5;
 	color: #111111;
-	min-width: 230px;
-	max-width: 550px;
-	margin: 0 auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-weight: 300;
+}
+
+section {
+  background: #fff;
+	min-width: 230px;
+	max-width: 550px;
+	margin: 0 auto;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+  0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
 :focus {
@@ -42,11 +48,8 @@ body {
 }
 
 .todoapp {
-	background: #fff;
 	margin: 180px 0 40px 0;
 	position: relative;
-	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
-	            0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
 .todoapp input::-webkit-input-placeholder {
@@ -270,7 +273,7 @@ body {
 	border-top: 1px solid #e6e6e6;
 }
 
-.footer:before {
+/* .footer:before {
 	content: '';
 	position: absolute;
 	right: 0;
@@ -283,7 +286,7 @@ body {
 	            0 9px 1px -3px rgba(0, 0, 0, 0.2),
 	            0 16px 0 -6px #f6f6f6,
 	            0 17px 2px -6px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .todo-count {
 	float: left;

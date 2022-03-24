@@ -6,11 +6,21 @@
         <mat-form-field>
           <mat-icon matPrefix>person_outline</mat-icon>
           <input autofocus type="text" matInput placeholder="Username" formControlName="username">
+          <mat-error
+           *ngIf="loginForm.controls['username'].invalid
+            && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)">
+            Username is required
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <mat-icon matPrefix>lock_outline</mat-icon>
           <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password">
+          <mat-error
+            *ngIf="loginForm.controls['password'].invalid
+            && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+           Password is required
+          </mat-error>
         </mat-form-field>
 
         <button type="submit" mat-raised-button color="primary">Login</button>

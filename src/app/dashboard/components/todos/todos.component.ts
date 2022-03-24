@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/login/services/auth.service';
 import { TodosService } from '../../services/todos.service';
 
 @Component({
@@ -8,10 +9,14 @@ import { TodosService } from '../../services/todos.service';
 })
 export class TodosComponent implements OnInit {
 
-  constructor() {
+  constructor(private authService: AuthService) {
 
   }
 
   ngOnInit(): void {
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

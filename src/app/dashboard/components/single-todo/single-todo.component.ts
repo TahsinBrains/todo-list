@@ -41,6 +41,10 @@ export class SingleTodoComponent implements OnInit, OnChanges {
     this.setEditingIdEvent.emit(this.todoProps.id);
   }
 
+  archiveTodo(): void {
+    this.todoService.archiveTodo(this.todoProps.id);
+  }
+
   removeTodo(): void {
     this.todoService.removeTodo(this.todoProps.id);
   }

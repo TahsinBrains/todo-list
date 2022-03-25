@@ -33,5 +33,14 @@
       Completed
       </a>
     </li>
+    <li>
+      <a
+       href="/"
+       [ngClass]="{selected: (filter$ | async) === filterEnum.archived}"
+       (click)="changeFilter($event, filterEnum.archived)"
+      >
+      Archived
+      </a>
+    </li>
   </ul>
 </footer>

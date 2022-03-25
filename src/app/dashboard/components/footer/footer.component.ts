@@ -43,7 +43,6 @@ export class FooterComponent implements OnInit {
 
   changeFilter(event: Event, filter: FilterEnum): void {
     event.preventDefault();
-    console.log('filter', filter);
     this.todosService.changeFilter(filter);
   }
 

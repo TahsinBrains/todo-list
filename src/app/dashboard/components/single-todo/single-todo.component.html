@@ -6,12 +6,7 @@
      [checked]="todoProps.isCompleted"
      (change)="toggleTodo()">
     <label (dblclick)="setTodoInEditMode()">{{todoProps.text}}</label>
-    <button class="destroy archive" (click)="archiveTodo()">
-      <mat-icon>archive</mat-icon>
-    </button>
-    <button class="destroy" (click)="removeTodo()">
-      <mat-icon>close</mat-icon>
-    </button>
+    <button class="destroy" (click)="removeTodo()"></button>
   </div>
 
   <ng-container *ngIf="isEditingProps">

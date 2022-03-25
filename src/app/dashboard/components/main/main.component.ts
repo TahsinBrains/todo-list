@@ -34,12 +34,9 @@ export class MainComponent implements OnInit {
       this.todosService.filter$]
     ).pipe(map(([todos, filter]: [TodoInterface[], FilterEnum]) => {
       if (filter === FilterEnum.active) {
-        // return todos which are active and not archived or complete
-        return todos.filter((todo) => !(todo.isCompleted || todo.isArchived));
+        return todos.filter((todo) => !todo.isCompleted);
       } else if (filter === FilterEnum.completed) {
         return todos.filter((todo) => todo.isCompleted);
-      } else if (filter === FilterEnum.archived) {
-        return todos.filter((todo) => todo.isArchived);
       }
       return todos;
     }));

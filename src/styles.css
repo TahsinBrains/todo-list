@@ -245,12 +245,12 @@ section {
 	transition: color 0.2s ease-out;
 }
 
-.todo-list li .archive {
-  right: 50px;
-}
-
 .todo-list li .destroy:hover {
 	color: #af5b5e;
+}
+
+.todo-list li .destroy:after {
+	content: '×';
 }
 
 .todo-list li:hover .destroy {

@@ -21,8 +21,7 @@ export class TodosService {
     const newTodo: TodoInterface = {
       text,
       isCompleted: false,
-      id: Math.random().toString(16),
-      isArchived: false
+      id: Math.random().toString(16)
     };
 
     const updatedTodos = [...this.todos$.getValue(), newTodo];
@@ -44,21 +43,6 @@ export class TodosService {
         return {
           ...todo,
           isCompleted: !todo.isCompleted
-        }
-      }
-
-      return todo;
-    });
-    this.todos$.next(updatedTodos);
-    this.saveToLocal(updatedTodos);
-  }
-
-  archiveTodo(id: string): void {
-    const updatedTodos = this.todos$.getValue().map(todo => {
-      if(todo.id === id) {
-        return {
-          ...todo,
-          isArchived: !todo.isArchived
         }
       }
 
